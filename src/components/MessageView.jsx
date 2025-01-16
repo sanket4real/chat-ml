@@ -46,7 +46,7 @@ const MessageView = ({ selectedProject, selectedCandidate }) => {
 					</div>
 				</div>
 			) : (
-				<p className="text-gray-500 text-center mt-20">
+				<p className="flex items-center justify-center h-full text-[#D2D2D2] text-center text-3xl mt-20">
 					Please select project name and candidate
 				</p>
 			)}

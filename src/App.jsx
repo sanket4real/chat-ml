@@ -20,12 +20,11 @@ const App = () => {
 						onSelectCandidate={setSelectedCandidate}
 					/>
 				</div>
-				{selectedProject && selectedCandidate && (
-					<MessageView
-						selectedProject={selectedProject}
-						selectedCandidate={selectedCandidate}
-					/>
-				)}
+
+				<MessageView
+					selectedProject={selectedProject}
+					selectedCandidate={selectedCandidate}
+				/>
 			</div>
 		</div>
 	);
