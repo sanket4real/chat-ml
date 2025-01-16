@@ -14,10 +14,15 @@ const App = () => {
 			<Header navLinks={navLinks} />
 			<div className="flex flex-grow bg-light-blue-bg p-2">
 				<div className="flex flex-col w-5/12 max-w-[476px] ">
-					<ProjectList projects={projects} onSelectProject={setSelectedProject} />
+					<ProjectList
+						projects={projects}
+						onSelectProject={setSelectedProject}
+						selectedProject={selectedProject}
+					/>
 					<CandidateList
 						candidates={candidates}
 						onSelectCandidate={setSelectedCandidate}
+						selectedCandidate={selectedCandidate}
 					/>
 				</div>
 

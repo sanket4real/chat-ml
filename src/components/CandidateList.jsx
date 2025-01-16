@@ -1,6 +1,10 @@
 import React from "react";
 
-const CandidateList = ({ candidates, onSelectCandidate }) => (
+const CandidateList = ({
+	candidates,
+	onSelectCandidate,
+	selectedCandidate,
+}) => (
 	<div className="p-4 bg-white border-[1px] border-[#EBEBEB] mt-2 rounded-md">
 		<details className="dropdown w-full">
 			<summary className="text-lg font-bold cursor-pointer flex items-center justify-between">
@@ -29,7 +33,9 @@ const CandidateList = ({ candidates, onSelectCandidate }) => (
 						<li
 							key={candidate.id}
 							onClick={() => onSelectCandidate(candidate)}
-							className="relative w-full md:w-1/2 p-4 border rounded-md hover:bg-gray-100 cursor-pointer flex flex-col justify-start items-start">
+							className={`relative w-full md:w-1/2 p-4 border rounded-md hover:bg-gray-100 cursor-pointer flex flex-col justify-start items-start ${
+								selectedCandidate?.id === candidate.id ? "bg-[#E5F0FA]" : ""
+							}`}>
 							<span className="absolute -top-2 -right-2 flex justify-center items-center text-sm bg-[#0D77D4] text-white p-4 w-2 h-4 rounded-full font-medium">
 								{candidate.notifications}
 							</span>

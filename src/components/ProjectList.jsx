@@ -1,6 +1,10 @@
 import React from "react";
 
-const ProjectList = ({ projects, onSelectProject }) => (
+const ProjectList = ({
+	projects,
+	onSelectProject,
+	selectedProject = { selectedProject },
+}) => (
 	<div className="p-4 bg-white border-[1px] border-[#EBEBEB] rounded-md">
 		<details className="dropdown w-full">
 			<summary className="text-lg font-bold  cursor-pointer flex items-center justify-between">
@@ -29,7 +33,9 @@ const ProjectList = ({ projects, onSelectProject }) => (
 						<li
 							key={project.id}
 							onClick={() => onSelectProject(project)}
-							className="flex items-center justify-between p-4 border rounded-md hover:bg-gray-100 cursor-pointer">
+							className={`flex items-center justify-between p-4 border rounded-md hover:bg-gray-100 cursor-pointer ${
+								selectedProject?.id === project.id ? "bg-[#E5F0FA]" : ""
+							}`}>
 							<div className="font-semibold">{project.name}</div>
 							<div className="flex items-center pr-2">
 								{project.members.map((member, index) => (
